@@ -67,7 +67,7 @@ public class Lote {
 	
 	public String toString()
 	{
-		return("Lote: (ID: "+idLote+", Cantidad inicial: "+cantidadInicial+", Cantidad existente: "+cantidadExistente+", En uso: "+enUso+", Fecha producción: "+Funciones.traerFechaCorta(fechaProduccion)+" "+Funciones.traerHoraSimple(fechaProduccion));
+		return("Lote: (ID: "+idLote+", Cantidad inicial: "+cantidadInicial+", Cantidad existente: "+cantidadExistente+", En uso: "+enUso+", Fecha producción: "+Funciones.traerFechaCorta(fechaProduccion)+"-"+Funciones.traerHoraSimple(fechaProduccion));
 	}
 	
 	

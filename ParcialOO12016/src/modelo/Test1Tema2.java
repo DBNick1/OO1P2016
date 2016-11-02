@@ -40,8 +40,8 @@ public class Test1Tema2 {
 		
 		a1.agregarStock(120, 250, a1.traerProducto(2));
 		a1.traerStock(2).agregarLote(250, 0, true, new GregorianCalendar(2016,10,1));
-		a1.traerStock(2).agregarLote(200, 150, false, new GregorianCalendar(2016,10,10));
-		a1.traerStock(2).agregarLote(200, 150, false, new GregorianCalendar(2016,10,17));
+		a1.traerStock(2).agregarLote(250, 0, false, new GregorianCalendar(2016,10,10));
+		a1.traerStock(2).agregarLote(250, 150, false, new GregorianCalendar(2016,10,17));
 		
 		a1.agregarStock(200, 400, a1.traerProducto(3));
 		a1.traerStock(3).agregarLote(400, 0, true, new GregorianCalendar(2016,10,1));
