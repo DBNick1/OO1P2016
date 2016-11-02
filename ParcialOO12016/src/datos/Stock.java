@@ -77,14 +77,50 @@ public class Stock {
 		}
 		return max;
 	}
-
 	
+	public int calcularCantidadExistente()
+	{
+		int sum=0;
+		int i=0;
+		while(i<lotes.size())
+				{
+					sum=sum+lotes.get(i).getCantidadExistente();
+					i++;
+				}
+		return sum;
+	}
+	
+	public int calcularCantidadAProducir()
+	{
+		int cantidadExistente = calcularCantidadExistente();
+		int cantidadAProducir = 0;
+		cantidadAProducir=puntoStockDeseado-cantidadExistente;
+		if(cantidadAProducir<0)
+		{
+			cantidadAProducir=0;
+		}
+		
+		return cantidadAProducir;
+	}
+	
+	public int calcularCantidadPorEncimaDelStockDeseado()
+	{
+		int cantidadExistente = calcularCantidadExistente();
+		int cantidadPorEncimaDelStockDeseado = 0;
+		cantidadPorEncimaDelStockDeseado = cantidadExistente - puntoStockDeseado;
+		if(cantidadPorEncimaDelStockDeseado<0)
+		{
+			cantidadPorEncimaDelStockDeseado=0;
+		}
+		return cantidadPorEncimaDelStockDeseado;
+	}
+
 	public String toString()
 	{
 		return 
 		("Stock: (ID: "+idStock+", P. de aprovisionamiento: "+puntoAprovisionamiento+""
 				+ ", P. de stock deseado: "+puntoStockDeseado
 				+"\n"+producto);
-		}
+	}
 	
 }

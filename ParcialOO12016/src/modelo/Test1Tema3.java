@@ -1,12 +1,13 @@
 package modelo;
 
-import datos.Administrador;
-import datos.Producto;
-import datos.Stock;
-import datos.Lote;
 import java.util.GregorianCalendar;
 
-public class Test1Tema1 {
+import datos.Administrador;
+import datos.Lote;
+import datos.Producto;
+import datos.Stock;
+
+public class Test1Tema3 {
 	
 	public static void main(String[] args)  {
 		
@@ -75,7 +76,45 @@ public class Test1Tema1 {
 				}
 			
 		}
-			
+		
+		//Parte tres
+		System.out.println("---> calcularCantidadExistente Cantidad existente para el "+a1.traerProducto(1)+" es: " );
+		System.out.println(a1.calcularCantidadExistente(a1.traerProducto(1)));
+		System.out.println("---> calcularCantidadAProducir");
+		System.out.println(a1.calcularCantidadAProducir(a1.traerProducto(1)));
+		System.out.println("---> calcularCantidadPorEncimaStockDeseado Cantidad por encima del stock deseado para el " +a1.traerProducto(1)+" es: ");
+		System.out.println(a1.calcularCantidadPorEncimaDelStockDeseado(a1.traerProducto(1)));
+		
+		
+		System.out.println("---> calcularCantidadExistente Cantidad existente para el " +a1.traerProducto(2)+ " es: ");
+		System.out.println(a1.calcularCantidadAProducir(a1.traerProducto(2)));
+		System.out.println("---> calcularCantidadAProducir");
+		System.out.println(a1.calcularCantidadAProducir(a1.traerProducto(2)));
+		System.out.println("---> calcularCantidadPorEncimaStockDeseado Cantidad por encima del stock deseado para el " +a1.traerProducto(1)+" es: ");
+		System.out.println(a1.calcularCantidadPorEncimaDelStockDeseado(a1.traerProducto(2)));
+		
+
+	
+		int cantidadExistente=0;
+		int cantidadAProducir=0;
+		int cantidadPorEncimaDelStockDeseado=0;
+		
+		for (Stock s : a1.getStocks()){
+			cantidadExistente=cantidadExistente+(s.calcularCantidadExistente());
+			cantidadAProducir=cantidadAProducir+(s.calcularCantidadAProducir());
+			cantidadPorEncimaDelStockDeseado=cantidadPorEncimaDelStockDeseado+(s.calcularCantidadPorEncimaDelStockDeseado());
+		}
+		
+		System.out.println("---> calcularCantidadExistente");
+		System.out.println("La cantidad existente de todos los productos es:");
+		System.out.println(cantidadExistente);
+		System.out.println("---> calcularCantidadAProducir");
+		System.out.println("La cantidad a producir de todos los productos es:");
+		System.out.println(cantidadAProducir);
+		System.out.println("---> calcularCantidadPorEncimaStockDeseado");
+		System.out.println("Cantidad por encima del stock deseado de todos los productos:");
+		System.out.println(cantidadPorEncimaDelStockDeseado);
+		
 		}catch (Exception e)
 		
 		{

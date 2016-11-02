@@ -1,12 +1,13 @@
 package modelo;
 
-import datos.Administrador;
-import datos.Producto;
-import datos.Stock;
-import datos.Lote;
 import java.util.GregorianCalendar;
 
-public class Test1Tema1 {
+import datos.Administrador;
+import datos.Lote;
+import datos.Producto;
+import datos.Stock;
+
+public class Test1Tema2 {
 	
 	public static void main(String[] args)  {
 		
@@ -39,8 +40,8 @@ public class Test1Tema1 {
 		
 		a1.agregarStock(120, 250, a1.traerProducto(2));
 		a1.traerStock(2).agregarLote(250, 0, true, new GregorianCalendar(2016,10,1));
-		a1.traerStock(2).agregarLote(250, 0, false, new GregorianCalendar(2016,10,10));
-		a1.traerStock(2).agregarLote(250, 150, false, new GregorianCalendar(2016,10,17));
+		a1.traerStock(2).agregarLote(200, 150, false, new GregorianCalendar(2016,10,10));
+		a1.traerStock(2).agregarLote(200, 150, false, new GregorianCalendar(2016,10,17));
 		
 		a1.agregarStock(200, 400, a1.traerProducto(3));
 		a1.traerStock(3).agregarLote(400, 0, true, new GregorianCalendar(2016,10,1));
@@ -75,6 +76,20 @@ public class Test1Tema1 {
 				}
 			
 		}
+		
+		
+		//Parte dos
+		System.out.println("\n");
+		System.out.println("---> agregarStock (P. de aprovisionamiento: 10, P. de stock deseado: 200, Producto: (ID: 1, Nombre: Queso Cremoso, Código: 001, Tipo: Quesos)");
+		//a1.agregarStock(10, 200, a1.traerProducto(1));
+		System.out.println("\n");
+		System.out.println("---> traerStock para el idStock: 1");
+		System.out.println(a1.traerStock(1));
+		System.out.println("\n");
+		System.out.println("---> traerStock para el Producto: (ID: 2, Nombre: Queso Light, Código: 002, Tipo: Quesos)");
+		System.out.println(a1.traerStock(a1.traerProducto(2)));
+		
+		
 			
 		}catch (Exception e)
 		
@@ -84,5 +99,9 @@ public class Test1Tema1 {
 		}
 		
 	}
+		
 	
+	
+	
+
 }

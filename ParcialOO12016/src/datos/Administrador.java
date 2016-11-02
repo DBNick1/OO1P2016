@@ -51,22 +51,20 @@ public class Administrador {
 	{
 		boolean respuesta =false;
 		boolean encontro =false;;
-		int i = 0;
-		while(i<stocks.size() && !encontro)
-		{
-			if(stocks.get(i).getProducto()==producto)
+
+			if((puntoAprovisionamiento)<(puntoStockDeseado*0.3))
 			{
 				encontro=true;
-				throw new Exception("Ya existe el producto");
+				throw new Exception("El punto de aprovisionamiento debe ser por lo menos un 30% del stock deseado");
 			}
-			else i++;
-			
-		}
+
 		if(!encontro)
 		{
+			
 		Stock s1 = new Stock(traerMaximoIdStock()+1,puntoAprovisionamiento,puntoStockDeseado,producto);
 		stocks.add(s1);
 		respuesta=true;
+		
 		}
 		
 		return respuesta;
@@ -100,6 +98,19 @@ public class Administrador {
 		return s;
 	}
 	
+	public Stock traerStock(Producto producto)
+	{
+		Stock s = new Stock();
+		for(int i=0;i<stocks.size();i++)
+		{
+			if(stocks.get(i).getProducto()==producto)
+			{
+				s=stocks.get(i);
+			}
+		}
+		return s;
+	}
+	
 	
 	public int traerMaximoId()
 	{
@@ -125,6 +136,25 @@ public class Administrador {
 			i++;
 		}
 		return max;
+	}
+	
+	
+	public int calcularCantidadExistente(Producto producto)
+	{
+		int cantidadExistente = traerStock(producto).calcularCantidadExistente();
+		return cantidadExistente;
+	}
+	
+	public int calcularCantidadAProducir(Producto producto)
+	{
+		int cantidadAProducir = traerStock(producto).calcularCantidadAProducir();
+		return cantidadAProducir;
+	}
+
+	public int calcularCantidadPorEncimaDelStockDeseado(Producto producto)
+	{
+		int cantidadPorEncimaDelStockDeseado = traerStock(producto).calcularCantidadPorEncimaDelStockDeseado();
+		return cantidadPorEncimaDelStockDeseado;
 	}
 	
 

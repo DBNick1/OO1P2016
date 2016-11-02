@@ -42,6 +42,12 @@ public class Producto {
 		this.tipo = tipo;
 	}
 	
+	public boolean equals(Producto producto)
+	{
+		return producto.getIdProducto()==idProducto;
+	}
+	
+	
 	public String toString()
 	{
 		return("Producto: (ID:"+idProducto+", Nombre: "+nombreProducto+", Código: "+codigo+", Tipo: "+tipo+")");
