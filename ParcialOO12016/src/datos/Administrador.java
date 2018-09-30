@@ -69,6 +69,8 @@ public class Administrador {
 		
 		return respuesta;
 	}
+
+	public boolean agregarStockii();
 	
 	public Producto traerProducto(int idProducto)
 	{
